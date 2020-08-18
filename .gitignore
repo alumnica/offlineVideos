@@ -29,6 +29,8 @@ build/
 .gradle
 local.properties
 *.iml
+# This files generates when device runs out of memory. It's not useful and is very heavy causing git problems.
+*.hprof
 
 # node.js
 #
@@ -40,6 +42,8 @@ yarn-error.log
 buck-out/
 \.buckd/
 *.keystore
+# Prevents some problems when cloning repo
+!debug.keystore
 
 # fastlane
 #
