@@ -26,7 +26,7 @@ const MainNavigation = () => {
           component={StackNavigatorOne}
           options={{
             tabBarIcon: ({ focused }) => (
-              <TabBarIcon focused={focused} name="adjust" />
+              <TabBarIcon focused={focused} name="atom" />
             ),
           }}
         />
@@ -35,7 +35,7 @@ const MainNavigation = () => {
           component={StackNavigatorTwo}
           options={{
             tabBarIcon: ({ focused }) => (
-              <TabBarIcon focused={focused} name="braille" />
+              <TabBarIcon focused={focused} name="code" />
             ),
           }}
         />
