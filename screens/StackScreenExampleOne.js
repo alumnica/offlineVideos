@@ -42,11 +42,11 @@ const StackScreenExampleOne = ({
     },
     text: {
       color: "#feffff",
-      // fontFamily: "DMSerifDisplay_400Regular",
+      fontFamily: "DMSerifDisplay_400Regular",
       fontSize: 30,
     },
     info: {
-      // fontFamily: "Poppins_300Light",
+      fontFamily: "Poppins_300Light",
       color: "#feffff" },
     button: {
       marginVertical: 10,

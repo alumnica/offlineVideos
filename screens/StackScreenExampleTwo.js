@@ -26,11 +26,11 @@ const StackScreenExampleTwo = ({
     },
     text: {
       color: color,
-      // fontFamily: "DMSerifDisplay_400Regular",
+      fontFamily: "DMSerifDisplay_400Regular",
       fontSize: 30,
     },
     info: {
-      // fontFamily: "Poppins_300Light",
+      fontFamily: "Poppins_300Light",
       color: color },
     button: {
       marginVertical: 10,
