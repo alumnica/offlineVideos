@@ -1,16 +1,45 @@
+// In App.js in a new project
+
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import  DefaultScreen from "../screens/DefaultScreen.js";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import StackNavigatorOne from "./StackNavigatorOne.js";
+import StackNavigatorTwo from "./StackNavigatorTwo.js";
+import TabBarIcon from "../components/TabBarIcon";
 
-const Stack = createStackNavigator();
+const BottomTab = createBottomTabNavigator();
 
 const MainNavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={DefaultScreen} />
-      </Stack.Navigator>
+      <BottomTab.Navigator
+        tabBarOptions={{
+          showLabel: false,
+          style: {
+            backgroundColor: "#121a21",
+            borderTopWidth: 0,
+          },
+        }}
+      >
+        <BottomTab.Screen
+          name="Adjust"
+          component={StackNavigatorOne}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <TabBarIcon focused={focused} name="adjust" />
+            ),
+          }}
+        />
+        <BottomTab.Screen
+          name="Braille"
+          component={StackNavigatorTwo}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <TabBarIcon focused={focused} name="braille" />
+            ),
+          }}
+        />
+      </BottomTab.Navigator>
     </NavigationContainer>
   );
 };
