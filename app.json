@@ -1,0 +1,12 @@
+{
+  "name": "BareReactNativeTemplate",
+  "displayName": "BareReactNativeTemplate",
+  "expo": {
+    "name": "BareReactNativeTemplate",
+    "slug": "BareReactNativeTemplate",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
