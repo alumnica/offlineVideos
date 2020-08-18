@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import StackNavigatorOne from "./StackNavigatorOne.js";
 import StackNavigatorTwo from "./StackNavigatorTwo.js";
 import TabBarIcon from "../components/TabBarIcon";
+import { StatusBar } from 'expo-status-bar';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -40,6 +41,7 @@ const MainNavigation = () => {
           }}
         />
       </BottomTab.Navigator>
+      <StatusBar style="light" />
     </NavigationContainer>
   );
 };
