@@ -12,22 +12,6 @@ const StackScreenExampleOne = ({
       Math.floor(Math.random() * Math.floor(colorsArray.length))
     ];
   };
-  useEffect(() => {
-    const bla = async () => {
-      try {
-        const fplants = await firestore()
-          .collection("plants")
-          .doc("HWZExph28LWx6ihDaZO8")
-          .get()
-        setPlants(fplants);
-      } catch (e) {
-        console.log(e);
-      } finally {
-      }
-    };
-    bla();
-  }, []);
-
   let [color, setColor] = useState(getColor());
   let [plants, setPlants] = useState("");
 
