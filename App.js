@@ -4,21 +4,28 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import MainNavigation from "./navigation/MainNavigation.js";
 
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import rootReducer from "./store";
+
 import Loading from "./components/Loading.js";
 import {
   useFonts,
   DMSerifDisplay_400Regular,
   DMSerifDisplay_400Regular_Italic,
 } from "@expo-google-fonts/dm-serif-display";
-import { Poppins_300Light } from "@expo-google-fonts/poppins";
+import { Poppins_200ExtraLight } from "@expo-google-fonts/poppins";
 
+const store = configureStore({
+  reducer: rootReducer,
+});
 
 const App = (props) => {
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);
   let [fontsLoaded] = useFonts({
     DMSerifDisplay_400Regular,
     DMSerifDisplay_400Regular_Italic,
-    Poppins_300Light,
+    Poppins_200ExtraLight,
   });
   // Load any resources or data that we need prior to rendering the app
   React.useEffect(() => {
@@ -29,7 +36,6 @@ const App = (props) => {
       } finally {
       }
     }
-
     loadResourcesAndDataAsync();
   }, []);
 
@@ -41,7 +47,9 @@ const App = (props) => {
 
   if (isLoadingComplete) {
     return (
+      <Provider store={store}>
         <MainNavigation />
+      </Provider>
     );
   } else {
     return <Loading />;

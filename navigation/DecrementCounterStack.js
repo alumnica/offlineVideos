@@ -1,25 +1,26 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
-import StackScreenExampleOne from "../screens/StackScreenExampleOne"
+import DecrementCounterScreen from "../screens/DecrementCounterScreen.js";
 
 const Stack = createStackNavigator();
 
-const StackNavigatorOne= ({ navigation, route })=> {
+const DecrementCounterStack = ({ navigation, route }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
         name="Home"
-        component={StackScreenExampleOne}
-        initialParams={{color:"white"}}
+        component={DecrementCounterScreen}
+        initialParams={{ color: "white" }}
         options={{
           headerTransparent: true,
           headerBackTitleVisible: false,
           headerTintColor: "#feffff",
           headerTitle: "",
+          animationEnabled: true,
         }}
       />
     </Stack.Navigator>
   );
-}
+};
 
-export default StackNavigatorOne;
+export default DecrementCounterStack;

@@ -3,8 +3,8 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import StackNavigatorOne from "./StackNavigatorOne.js";
-import StackNavigatorTwo from "./StackNavigatorTwo.js";
+import IncrementCounterStack from "./IncrementCounterStack.js";
+import DecrementCounterStack from "./DecrementCounterStack.js";
 import TabBarIcon from "../components/TabBarIcon";
 import { StatusBar } from 'expo-status-bar';
 
@@ -24,7 +24,7 @@ const MainNavigation = () => {
       >
         <BottomTab.Screen
           name="Adjust"
-          component={StackNavigatorOne}
+          component={IncrementCounterStack}
           options={{
             tabBarIcon: ({ focused }) => (
               <TabBarIcon focused={focused} name="atom" />
@@ -33,7 +33,7 @@ const MainNavigation = () => {
         />
         <BottomTab.Screen
           name="Braille"
-          component={StackNavigatorTwo}
+          component={DecrementCounterStack}
           options={{
             tabBarIcon: ({ focused }) => (
               <TabBarIcon focused={focused} name="code" />
