@@ -11,7 +11,7 @@ const DecrementCounterStack = ({ navigation, route }) => {
       <Stack.Screen
         name="Home"
         component={DecrementCounterScreen}
-        initialParams={{ color: color.white }}
+        initialParams={{ color: colors.white }}
         options={{
           headerTransparent: true,
           headerBackTitleVisible: false,

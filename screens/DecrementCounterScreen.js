@@ -1,21 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 import { getRandomColor, colors } from "../helpers/colors.js";
-import { connect } from "react-redux";
-import { decrement } from "../store/counterSlice.js";
 
-const mapDispatchToProps = { decrement };
-
-const DecrementCounterScreen = ({
-  navigation,
-  route,
-  buttonClicked,
-  counter,
-  decrement,
-}) => {
-
+const DecrementCounterScreen = ({ navigation, route }) => {
   let [color, setColor] = useState(getRandomColor());
-  
   navigation.setOptions({ headerTintColor: route.params.color });
 
   const styles = StyleSheet.create({
@@ -50,16 +39,22 @@ const DecrementCounterScreen = ({
     },
   });
 
+  const count = useSelector((state) => {
+    return state.counter;
+  });
+
+  const dispatch = useDispatch();
+
   return (
     <View style={styles.container}>
       <View style={styles.counterWrapper}>
-        <Text style={styles.counter}>{counter}</Text>
+        <Text style={styles.counter}>{count}</Text>
       </View>
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          navigation.push("Home", { color: color });
-          decrement();
+          navigation.push("Home", { color });
+          dispatch({ type: "counter/decrement" });
         }}
       >
         <Text style={styles.text}>Decrease</Text>
@@ -68,11 +63,4 @@ const DecrementCounterScreen = ({
   );
 };
 
-const mapStateToProps = (state) => ({
-  counter: state.counter,
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DecrementCounterScreen);
+export default DecrementCounterScreen;

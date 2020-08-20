@@ -1,21 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { getRandomColor, colors } from "../helpers/colors.js";
-import { connect } from "react-redux";
-import { increment } from "../store/counterSlice.js";
+import { useSelector, useDispatch } from "react-redux";
 
-const mapDispatchToProps = { increment };
-
-const IncrementCounterScreen = ({
-  navigation,
-  route,
-  navData,
-  counter,
-  increment,
-}) => {
-
+const IncrementCounterScreen = ({ navigation, route }) => {
   let [color, setColor] = useState(getRandomColor());
-
   navigation.setOptions({ headerTintColor: route.params.color });
 
   const styles = StyleSheet.create({
@@ -50,16 +39,22 @@ const IncrementCounterScreen = ({
     },
   });
 
+  const count = useSelector((state) => {
+    return state.counter;
+  });
+
+  const dispatch = useDispatch();
+
   return (
     <View style={styles.container}>
       <View style={styles.counterWrapper}>
-        <Text style={styles.counter}>{counter}</Text>
+        <Text style={styles.counter}>{count}</Text>
       </View>
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          navigation.push("Home", { color: color });
-          increment();
+          navigation.push("Home", { color });
+          dispatch({ type: "counter/increment" });
         }}
       >
         <Text style={styles.text}>Increase</Text>
@@ -68,11 +63,4 @@ const IncrementCounterScreen = ({
   );
 };
 
-const mapStateToProps = (state) => ({
-  counter: state.counter,
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(IncrementCounterScreen);
+export default IncrementCounterScreen;
