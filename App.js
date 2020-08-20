@@ -1,34 +1,33 @@
+//Navigation, react-native-gesture-handler must be imported at the top of the doc either here or at index.js
 import "react-native-gesture-handler";
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 import MainNavigation from "./navigation/MainNavigation.js";
-
+//React and React Native
+import React, { useState, useEffect } from "react";
+import { StyleSheet, Text, View } from "react-native";
+//Redux
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import rootReducer from "./store";
-
+//Custom
 import Loading from "./components/Loading.js";
-import {
-  useFonts,
-  DMSerifDisplay_400Regular,
-  DMSerifDisplay_400Regular_Italic,
-} from "@expo-google-fonts/dm-serif-display";
-import { Poppins_200ExtraLight } from "@expo-google-fonts/poppins";
-
+import { colors } from "./helpers/colors.js";
+//Expo
+import { StatusBar } from "expo-status-bar";
+import { useFonts, Poppins_200ExtraLight } from "@expo-google-fonts/poppins";
+import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
+//Creates Store
 const store = configureStore({
   reducer: rootReducer,
 });
 
 const App = (props) => {
-  const [isLoadingComplete, setLoadingComplete] = React.useState(false);
+  const [isLoadingComplete, setLoadingComplete] = useState(false);
   let [fontsLoaded] = useFonts({
     DMSerifDisplay_400Regular,
-    DMSerifDisplay_400Regular_Italic,
     Poppins_200ExtraLight,
   });
   // Load any resources or data that we need prior to rendering the app
-  React.useEffect(() => {
+  useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
       } catch (e) {
@@ -39,7 +38,7 @@ const App = (props) => {
     loadResourcesAndDataAsync();
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (fontsLoaded) {
       setLoadingComplete(true);
     }
@@ -48,19 +47,13 @@ const App = (props) => {
   if (isLoadingComplete) {
     return (
       <Provider store={store}>
-        <MainNavigation />
+          <MainNavigation />
+          <StatusBar style="light" />
       </Provider>
     );
   } else {
     return <Loading />;
   }
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000",
-  },
-});
 
 export default App;

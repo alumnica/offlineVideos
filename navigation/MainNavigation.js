@@ -1,12 +1,12 @@
-// In App.js in a new project
-
 import * as React from "react";
+//Navigation
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+//Custom
 import IncrementCounterStack from "./IncrementCounterStack.js";
 import DecrementCounterStack from "./DecrementCounterStack.js";
 import TabBarIcon from "../components/TabBarIcon";
-import { StatusBar } from 'expo-status-bar';
+import {colors} from "../helpers/colors.js"
 
 const BottomTab = createBottomTabNavigator();
 
@@ -17,13 +17,13 @@ const MainNavigation = () => {
         tabBarOptions={{
           showLabel: false,
           style: {
-            backgroundColor: "#121a21",
+            backgroundColor: colors.black,
             borderTopWidth: 0,
           },
         }}
       >
         <BottomTab.Screen
-          name="Adjust"
+          name="Increase"
           component={IncrementCounterStack}
           options={{
             tabBarIcon: ({ focused }) => (
@@ -32,7 +32,7 @@ const MainNavigation = () => {
           }}
         />
         <BottomTab.Screen
-          name="Braille"
+          name="Decrease"
           component={DecrementCounterStack}
           options={{
             tabBarIcon: ({ focused }) => (
@@ -41,7 +41,6 @@ const MainNavigation = () => {
           }}
         />
       </BottomTab.Navigator>
-      <StatusBar style="light" />
     </NavigationContainer>
   );
 };

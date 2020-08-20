@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { colorsArray, colors } from "../helpers/colors.js";
+import { getRandomColor, colors } from "../helpers/colors.js";
 import { connect } from "react-redux";
 import { decrement } from "../store/counterSlice.js";
 
@@ -13,14 +13,9 @@ const DecrementCounterScreen = ({
   counter,
   decrement,
 }) => {
-  const getColor = () => {
-    return colorsArray[
-      Math.floor(Math.random() * Math.floor(colorsArray.length))
-    ];
-  };
 
-  let [color, setColor] = useState(getColor());
-
+  let [color, setColor] = useState(getRandomColor());
+  
   navigation.setOptions({ headerTintColor: route.params.color });
 
   const styles = StyleSheet.create({
@@ -67,7 +62,7 @@ const DecrementCounterScreen = ({
           decrement();
         }}
       >
-        <Text style={styles.text}>Decrement</Text>
+        <Text style={styles.text}>Decrease</Text>
       </TouchableOpacity>
     </View>
   );

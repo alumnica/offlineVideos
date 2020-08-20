@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { colorsArray, colors } from "../helpers/colors.js";
+import { getRandomColor, colors } from "../helpers/colors.js";
 import { connect } from "react-redux";
 import { increment } from "../store/counterSlice.js";
 
@@ -13,13 +13,8 @@ const IncrementCounterScreen = ({
   counter,
   increment,
 }) => {
-  const getColor = () => {
-    return colorsArray[
-      Math.floor(Math.random() * Math.floor(colorsArray.length))
-    ];
-  };
-  let [color, setColor] = useState(getColor());
-  let [plants, setPlants] = useState("");
+
+  let [color, setColor] = useState(getRandomColor());
 
   navigation.setOptions({ headerTintColor: route.params.color });
 
@@ -57,16 +52,17 @@ const IncrementCounterScreen = ({
 
   return (
     <View style={styles.container}>
-    <View style={styles.counterWrapper}>
-      <Text style={styles.counter}>{counter}</Text></View>
+      <View style={styles.counterWrapper}>
+        <Text style={styles.counter}>{counter}</Text>
+      </View>
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          increment();
           navigation.push("Home", { color: color });
+          increment();
         }}
       >
-        <Text style={styles.text}>Increment</Text>
+        <Text style={styles.text}>Increase</Text>
       </TouchableOpacity>
     </View>
   );

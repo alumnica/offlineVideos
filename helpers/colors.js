@@ -32,3 +32,9 @@ export const colorsArray = [
   "#eeef20",
   "#ffff3f",
 ];
+
+export const getRandomColor = () => {
+  return colorsArray[
+    Math.floor(Math.random() * Math.floor(colorsArray.length))
+  ];
+};
