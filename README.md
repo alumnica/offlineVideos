@@ -24,6 +24,7 @@ and install iOS project's CocoaPods
 ```
 npx pod-install
 ```
+if you need to change app name and bundle identifier you need to use a package like [react-native-rename-next](https://github.com/mayconmesquita/react-native-rename-next).
 
 ## Built With
 
