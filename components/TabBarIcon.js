@@ -7,7 +7,7 @@ export default function TabBarIcon(props) {
     <FontAwesome5
       name={props.name}
       size={25}
-      color={props.focused ? colors.yellow : colors.white}
+      color={props.focused ? colors.salmon : colors.white}
     />
   );
 }
