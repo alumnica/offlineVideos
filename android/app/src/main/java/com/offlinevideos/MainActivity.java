@@ -1,4 +1,4 @@
-package com.barereactnativetemplate;
+package com.offlinevideos;
 
 import android.os.Bundle;
 

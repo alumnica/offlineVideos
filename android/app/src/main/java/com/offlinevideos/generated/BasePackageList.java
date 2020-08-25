@@ -1,4 +1,4 @@
-package com.barereactnativetemplate.generated;
+package com.offlinevideos.generated;
 
 import java.util.Arrays;
 import java.util.List;

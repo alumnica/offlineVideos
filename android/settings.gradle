@@ -1,4 +1,4 @@
-rootProject.name = 'BareReactNativeTemplate'
+rootProject.name = 'offlineVideos'
 
 apply from: '../node_modules/react-native-unimodules/gradle.groovy'
 includeUnimodulesProjects()

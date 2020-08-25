@@ -1,9 +1,9 @@
 {
-  "name": "BareReactNativeTemplate",
-  "displayName": "BareReactNativeTemplate",
+  "name": "offlineVideos",
+  "displayName": "offlineVideos",
   "expo": {
-    "name": "BareReactNativeTemplate",
-    "slug": "BareReactNativeTemplate",
+    "name": "offlineVideos",
+    "slug": "offlineVideos",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
