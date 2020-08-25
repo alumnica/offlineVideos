@@ -3,8 +3,8 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 //Custom
-import IncrementCounterStack from "./IncrementCounterStack.js";
-import DecrementCounterStack from "./DecrementCounterStack.js";
+import VideosStack from "./VideosStack.js";
+import DownloadedStack from "./DownloadedStack.js";
 import TabBarIcon from "../components/TabBarIcon";
 import {colors} from "../helpers/colors.js"
 
@@ -24,19 +24,19 @@ const MainNavigation = () => {
       >
         <BottomTab.Screen
           name="Increase"
-          component={IncrementCounterStack}
+          component={VideosStack}
           options={{
             tabBarIcon: ({ focused }) => (
-              <TabBarIcon focused={focused} name="atom" />
+              <TabBarIcon focused={focused} name="play-circle" />
             ),
           }}
         />
         <BottomTab.Screen
           name="Decrease"
-          component={DecrementCounterStack}
+          component={DownloadedStack}
           options={{
             tabBarIcon: ({ focused }) => (
-              <TabBarIcon focused={focused} name="code" />
+              <TabBarIcon focused={focused} name="file-download" />
             ),
           }}
         />

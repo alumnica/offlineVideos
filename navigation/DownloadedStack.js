@@ -1,16 +1,16 @@
 import * as React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import DecrementCounterScreen from "../screens/DecrementCounterScreen.js";
+import DownloadedScreen from "../screens/DownloadedScreen.js";
 import {colors} from "../helpers/colors.js"
 
 const Stack = createStackNavigator();
 
-const DecrementCounterStack = ({ navigation, route }) => {
+const DownloadedStack = ({ navigation, route }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
         name="Home"
-        component={DecrementCounterScreen}
+        component={DownloadedScreen}
         initialParams={{ color: colors.white }}
         options={{
           headerTransparent: true,
@@ -23,4 +23,4 @@ const DecrementCounterStack = ({ navigation, route }) => {
   );
 };
 
-export default DecrementCounterStack;
+export default DownloadedStack;
