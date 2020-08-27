@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>800766256223-anv1n6vrppaq4finigebln3lekvh9d1q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.800766256223-anv1n6vrppaq4finigebln3lekvh9d1q</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>800766256223-mgg7mqlf6ike4469ha3n4gbgjj2acpu4.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAi3vh0mADA68m_Jr_SBqyuz0OKn8mwaNs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>800766256223</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.offlineVideos</string>
+	<key>PROJECT_ID</key>
+	<string>alumnica-platform</string>
+	<key>STORAGE_BUCKET</key>
+	<string>alumnica-platform.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:800766256223:ios:ee506f4cf95b8584bce7ea</string>
+	<key>DATABASE_URL</key>
+	<string>https://alumnica-platform.firebaseio.com</string>
+</dict>
+</plist>
