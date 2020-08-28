@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "800766256223",
+    "firebase_url": "https://alumnica-platform.firebaseio.com",
+    "project_id": "alumnica-platform",
+    "storage_bucket": "alumnica-platform.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800766256223:android:be0a5b300871082ebce7ea",
+        "android_client_info": {
+          "package_name": "com.firestoragenative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800766256223-ns8efsqcnlp9t47bojdpbc77n4uvnsf4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.firestoragenative",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "800766256223-ro8si23681lavp7psgd6tbjovif108ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7thL3pB8FkDEgO0ZzD2nsAjOQR5JCpkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800766256223-ro8si23681lavp7psgd6tbjovif108ft.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "800766256223-13ju999svq72gtpatog3pl5lse5pt9c7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.firestoragenative"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800766256223:android:5e4fbd9e71ce5d5ebce7ea",
+        "android_client_info": {
+          "package_name": "com.offlinevideos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800766256223-mgg7mqlf6ike4469ha3n4gbgjj2acpu4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.offlinevideos",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "800766256223-ro8si23681lavp7psgd6tbjovif108ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7thL3pB8FkDEgO0ZzD2nsAjOQR5JCpkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800766256223-ro8si23681lavp7psgd6tbjovif108ft.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "800766256223-13ju999svq72gtpatog3pl5lse5pt9c7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.firestoragenative"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
