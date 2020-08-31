@@ -9,14 +9,22 @@ const DownloadedStack = ({ navigation, route }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home"
+        name="Downloaded"
         component={DownloadedScreen}
         initialParams={{ color: colors.white }}
         options={{
-          headerTransparent: true,
           headerBackTitleVisible: false,
-          headerTitle: "",
           animationEnabled: true,
+          headerStyle: {
+            backgroundColor: colors.black,
+            shadowColor: "transparent",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            color: colors.white,
+            fontFamily: "DMSerifDisplay_400Regular",
+            fontSize: 28,
+          },
         }}
       />
     </Stack.Navigator>

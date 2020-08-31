@@ -12,17 +12,25 @@ import storage from "@react-native-firebase/storage";
 import ListItem from "../components/ListItem.js";
 
 const VideosScreen = ({ navigation, route }) => {
-  const [files, setFiles] = useState([]);
+  const [data, setData] = useState([]);
 
   const _getAllDirectories = async (reference, pageToken) => {
     try {
       let data = [];
       let refs = await reference.list({ pageToken });
-      refs.items.forEach((item, i) => {
-        data.push({ tittle: item.name, key: `${i}` });
-      });
-      console.log(data);
-      setFiles(data);
+      //This way is quicker, because you getDownloadURL in parallel but its a JS antipattern because you are no using map array
+      await Promise.all(
+        refs.items.map(async (ref, i) => {
+          let url = await ref.getDownloadURL();
+          data.push({ tittle: ref.name, key: `${i}`, url: url });
+        })
+      );
+      //This way is slower, double time
+      // for (const [i,ref] of refs.items.entries()) {
+      //   let url = await ref.getDownloadURL()
+      //   data.push({ tittle: ref.name, key: `${i}`, url: url});
+      // }
+      setData(data);
     } catch (e) {
       console.log(e);
     }
@@ -35,9 +43,13 @@ const VideosScreen = ({ navigation, route }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Videos Screen</Text>
       <View style={styles.listContainer}>
-        <FlatList data={files} renderItem={ListItem} />
+        <FlatList
+          data={data}
+          renderItem={({item,index}) => {
+            return <ListItem item={item} index={index} navigation={navigation} />;
+          }}
+        />
       </View>
     </View>
   );
@@ -48,13 +60,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     backgroundColor: colors.black,
-    paddingTop: 55,
-  },
-  text: {
-    color: colors.white,
-    fontFamily: "DMSerifDisplay_400Regular",
-    fontSize: 30,
-    marginBottom: 20,
+    paddingTop: 10,
   },
   listContainer: { width: "100%" },
 });

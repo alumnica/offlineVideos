@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import VideosStack from "./VideosStack.js";
 import DownloadedStack from "./DownloadedStack.js";
 import TabBarIcon from "../components/TabBarIcon";
-import {colors} from "../helpers/colors.js"
+import { colors } from "../helpers/colors.js";
 
 const BottomTab = createBottomTabNavigator();
 
